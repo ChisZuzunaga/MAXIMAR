@@ -1,0 +1,195 @@
+body {
+    font-family: "Heebo", serif; /* Cambia a la fuente que desees */
+}
+.custom-navbar {
+    background-color: #1E2428; /* Cambia a tu color preferido */
+    color: white;
+}
+.custom-navbar .navbar-brand span {
+    color: #50AABD; /* Color del texto "MAXIMAR" */
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-weight: bold;
+}
+.custom-navbar .nav-link:hover {
+    color: #50AABD !important; /* Color de hover en los enlaces */
+}
+.custom-navbar .nav-link {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: white !important; /* Color de los enlaces */
+    margin-right: 25px; /* Espaciado entre enlaces */
+    transition: color 0.3s;
+}
+.custom-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+/* Ajuste del tamaño de las cartas */
+.custom-card {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto; /* Asegura el centrado horizontal */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Imagen contenida y oscurecida */
+.custom-card .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    transition: filter 0.3s ease-in-out;
+}
+/* Superposición de contenido */
+.custom-card .card-img-overlay {
+    color: white;
+    z-index: 2;
+}
+/* Estilos del texto */
+.custom-card .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.custom-card .card-text {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+/* Botón personalizado */
+.btn-custom {
+    background-color: #50AABD;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    width: auto;
+    max-width: fit-content;
+}
+.btn-custom:hover {
+    background-color: #3d808d;
+    color: white;
+}
+
+
+
+
+
+
+@media screen and (min-width : 1px ) and (max-width : 991px){
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, auto);
+    }
+    .div5, .div6, .div7, .div8 {
+        outline: 2px solid black;
+    }   
+    .custom-navbar .dropdown-menu {
+        background-color: #1E2428; /* Fondo del menú desplegable */
+        border: none;
+    }
+    .custom-navbar .dropdown-item {
+        color: white;
+        transition: background-color 0.3s;
+    }
+    .custom-navbar .dropdown-item:hover {
+        color: #50AABD;
+        background-color: #1E2428;
+    }
+    .div3, .div4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .custom-card .card-title {
+        font-size: 0.7rem;  /* Reducir tamaño del título */
+    }
+    .custom-card .card-text {
+        font-size: 1rem;  /* Reducir tamaño del texto */
+    }
+    .btn-custom {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+}
+
+    /* Medium Devices, Desktops */
+@media screen and (min-width : 992px) {
+    .parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(7, auto);
+    }
+    .div5, .div6, .div7, .div8 {
+        outline: 2px solid black;
+    }  
+    .div1 {
+        grid-column: span 2 / span 2;
+    }
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 2;
+        margin-bottom: 50px;
+    }
+    .div3, .div4 {
+        grid-row-start: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .div5 {
+        grid-column: span 2 / span 2;
+    }
+    .div6 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 5;
+    }
+    .div7 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 6;
+    }
+    .div8 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 7;
+    } 
+    .custom-navbar .dropdown-menu {
+        background-color: white; /* Fondo del menú desplegable */
+        color: black;
+    }
+    .custom-navbar .dropdown-item {
+        color: black;
+        transition: background-color 0.3s;
+    }
+    .custom-navbar .dropdown-item:hover {
+        color: #50AABD;
+    }
+    .custom-navbar .container-fluid {
+        padding-left: 0; /* Elimina el padding izquierdo */
+        padding-right: 0; /* Elimina el padding derecho */
+    }
+    .custom-navbar .navbar-brand {
+        margin-left: 0; /* Ajusta el margen izquierdo del logo */
+    }
+    .custom-navbar .nav-link {
+        margin-right: 50px; /* Ajusta el espaciado entre enlaces */
+    }
+    .custom-card .card-title {
+        font-size: 1rem;  /* Reducir tamaño del título */
+    }
+    .custom-card .card-text {
+        font-size: 1.5rem;  /* Reducir tamaño del texto */
+    }
+}
+
+    
+
+
+
+
+
+
+
+
+        
