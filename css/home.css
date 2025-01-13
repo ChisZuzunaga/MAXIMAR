@@ -24,53 +24,80 @@ body {
 }
 /* Ajuste del tamaño de las cartas */
 .custom-card {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     width: 90%;
     height: 90%;
-    border-radius: 10px;
-    overflow: hidden;
     margin: 0 auto; /* Asegura el centrado horizontal */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.custom-card:hover {
+    transform: translateY(-5px); /* Agrega un efecto de elevación */
+    transition: transform 0.3s ease-out; /* Más rápida al entrar */
+}
+
 /* Imagen contenida y oscurecida */
 .custom-card .card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%);
-    transition: filter 0.3s ease-in-out;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Animación lenta por defecto */
 }
+
+.custom-card:hover .card-img {
+    transform: scale(1.1); /* Zoom a la imagen */
+    transition: transform 0.3s ease-out; /* Más rápida al entrar */
+}
+
 /* Superposición de contenido */
 .custom-card .card-img-overlay {
     color: white;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 2;
 }
+
 /* Estilos del texto */
 .custom-card .card-title {
     font-size: 1.2rem;
     margin-bottom: 0;
 }
+
 .custom-card .card-text {
     font-size: 2rem;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 20px;
 }
+
 /* Botón personalizado */
 .btn-custom {
     background-color: #50AABD;
     color: white;
     font-size: 1rem;
-    padding: 10px 20px;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
     text-decoration: none;
     width: auto;
     max-width: fit-content;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Transición lenta por defecto */
 }
-.btn-custom:hover {
-    background-color: #3d808d;
-    color: white;
+
+.custom-card:hover .btn-custom {
+    background-color: #3f8796;
+    padding-right: 2em;
+    transition: all 0.3s ease-out; /* Más rápida al entrar */
 }
+
+/* Evitar cortes abruptos al salir del hover */
+.custom-card .btn-custom {
+    padding-right: 1rem; /* Valor inicial consistente */
+    background-color: #50AABD;
+}
+
 .footer {
     background-color: #1E2428;
     padding: 20px 0;
@@ -130,9 +157,6 @@ body {
 .logor {
     margin-top: 25px;
 }
-.div8 {
-    background-color: #1E2428;
-}
 .line-divider {
     display: none;
     width: 95%;
@@ -141,22 +165,122 @@ body {
     margin-top: 5px;
     margin-bottom: 15px;
 }
+.gallery-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-img:hover::after {
+    opacity: 1;
+}
+
+.gallery-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 9;
+}
+
+.gallery-img:hover .gallery-text {
+    opacity: 1;
+}
+
+.gallery-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.instagram-section {
+    text-align: center;
+    margin-bottom: 15px;
+}
+.instagram-section i {
+    font-size: 14px;
+    color: #888;
+}
+.instagram-section .follow-text {
+    font-size: 12px;
+    color: #888;
+    margin-left: 3px;
+}
+.instagram-section .username {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+.instagram-text-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-txt1 {
+    line-height: 0;
+    color: #00bcd4;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.custom-txt2 {
+    font-size: 1.2rem;
+}
+.carousell {
+    padding: 20px 0;
+}
+.carousel-cell {
+    width: 180px; /* Ancho de cada celda */
+    margin-right: 10px; /* Espacio entre celdas */
+    text-align: center;
+    border-radius: 10px;
+    background: white;
+    transition: transform 0.4s;
+}
+.carousel-cell:hover {
+    transform: scale(1.05);
+}
+.carousel-cell img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+}
 
 @media (max-width: 768px) {
     .line-divider {
         display: block;
     }
 }
-
-@media screen and (min-width : 1px ) and (max-width : 991px){
+@media screen and (min-width :1px ) and (max-width: 991px){
     .parent {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(8, auto);
     }
-    .div5, .div6 {
-        outline: 2px solid black;
-    }   
     .custom-navbar .dropdown-menu {
         background-color: #1E2428; /* Fondo del menú desplegable */
         border: none;
@@ -200,6 +324,10 @@ body {
     .list-unstyled, .contact-info {
         line-height: 1rem;
     }
+    .gallery-text {
+        font-size: 0.7rem;
+    }
+
 }
 
     /* Medium Devices, Desktops */
@@ -209,9 +337,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(7, auto);
     }
-    .div5, .div6 {
-        outline: 2px solid black;
-    }  
     .div1 {
         grid-column: span 2 / span 2;
     }
@@ -276,6 +401,7 @@ body {
         margin-left: auto;
         max-width: 1200px;
     }
+    
 }
 
     
