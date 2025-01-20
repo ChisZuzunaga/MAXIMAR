@@ -120,8 +120,17 @@ body {
 .product-card:hover{
     text-decoration: none;
 }
-.line-divider {
+.filter-area > .line-divider {
     display: block;
+    width: 95%;
+    height: 2px;
+    background-color: #00bcd4;
+    opacity: 50%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.line-divider {
+    display: none;
     width: 95%;
     height: 2px;
     background-color: #00bcd4;
@@ -213,6 +222,9 @@ body {
     .filter-area {
         margin-top: -30px;
         border: 1px solid #ddd;
+    }
+    .line-divider {
+        display: block;
     }
 }
 
